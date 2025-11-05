@@ -7,13 +7,22 @@
 		<em>A lightweight, modular Discord bot framework with zero built-in features</em>
 	</p>
 	<br />
-	<p>
-		<a href="https://github.com/RIKTIGATOMTEN/CoreBot"><img src="https://img.shields.io/github/last-commit/RIKTIGATOMTEN/CoreBot?logo=github&logoColor=white&style=flat-square" alt="Last commit" /></a>
-		<a href="https://github.com/RIKTIGATOMTEN/CoreBot/graphs/contributors"><img src="https://img.shields.io/github/contributors/RIKTIGATOMTEN/CoreBot?logo=github&logoColor=white&color=blue&style=flat-square" alt="Contributors" /></a>
-		<a href="https://github.com/RIKTIGATOMTEN/CoreBot/releases"><img src="https://img.shields.io/github/v/release/RIKTIGATOMTEN/CoreBot?style=flat-square" alt="Latest Release" /></a>
-		<a href="https://github.com/RIKTIGATOMTEN/CoreBot/blob/main/LICENSE"><img src="https://img.shields.io/github/license/RIKTIGATOMTEN/CoreBot?style=flat-square" alt="License" /></a>
-  		<a href="https://github.com/RIKTIGATOMTEN/CoreBot/wiki"><img src="https://img.shields.io/badge/:badgeContent?label=Wiki" alt="Wiki" /></a>
-	</p>
+<p>
+  <a href="https://github.com/RIKTIGATOMTEN/CoreBot">
+    <img src="https://img.shields.io/github/last-commit/RIKTIGATOMTEN/CoreBot?logo=github&logoColor=white&style=flat-square" alt="Last commit" />
+  </a>
+  <a href="https://github.com/RIKTIGATOMTEN/CoreBot/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/RIKTIGATOMTEN/CoreBot?logo=github&logoColor=white&color=blue&style=flat-square" alt="Contributors" />
+  </a>
+  <a href="https://github.com/RIKTIGATOMTEN/CoreBot/releases">
+    <img src="https://img.shields.io/github/v/release/RIKTIGATOMTEN/CoreBot?style=flat-square" alt="Latest Release" />
+  </a>
+  <a href="https://github.com/RIKTIGATOMTEN/CoreBot/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/RIKTIGATOMTEN/CoreBot?style=flat-square" alt="License" />
+  </a>
+</p>
+
+[![Wiki](https://img.shields.io/badge/wiki-documentation-blue?style=flat-square)](https://github.com/RIKTIGATOMTEN/CoreBot/wiki)
 </div>
 
 ## 📋 About
