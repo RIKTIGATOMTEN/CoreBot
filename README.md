@@ -1,70 +1,91 @@
-<<<<<<< HEAD
 <div align="center">
 	<br />
 	<p>
-		<img src="https://raw.githubusercontent.com/BotPortOfficial/nexus/main/.github/workflows/banner.png" width="546" alt="Ticket Bot" />
+		<h1>🤖 CoreBot</h1>
 	</p>
 	<p>
-</a>
-</p>
+		<em>A lightweight, modular Discord bot framework with zero built-in features</em>
+	</p>
 	<br />
 	<p>
-	    <a href="https://discord.gg/sRyU4GFraG"><img src="https://img.shields.io/discord/1383201315072639058?color=5865F2&logo=discord&logoColor=white" alt="Discord" /></a>
-		<a href="https://github.com/BotPortOfficial/nexus"><img src="https://img.shields.io/github/last-commit/BotPortOfficial/nexus?logo=github&logoColor=white&style=flat-square" alt="Last commit" /></a>
-		<a href="https://www.npmjs.com/package/@botport/core"><img src="https://img.shields.io/badge/framework-%40botport%2Fcore-blue?style=flat-square" alt="Framework" /></a>
-		<a href="https://github.com/BotPortOfficial/nexus/graphs/contributors"><img src="https://img.shields.io/github/contributors/BotPortOfficial/nexus?logo=github&logoColor=white&color=blue&style=flat-square" alt="Contributors" /></a>
-		<a href="https://github.com/BotPortOfficial/nexus/releases"><img src="https://img.shields.io/github/v/release/BotPortOfficial/nexus?style=flat-square" alt="Latest Release" /></a>
-		<a href="https://github.com/BotPortOfficial/nexus/blob/main/LICENSE"><img src="https://img.shields.io/github/license/BotPortOfficial/nexus?style=flat-square" alt="License" /></a>
-</div>
+		<a href="https://github.com/RIKTIGATOMTEN/CoreBot"><img src="https://img.shields.io/github/last-commit/RIKTIGATOMTEN/CoreBot?logo=github&logoColor=white&style=flat-square" alt="Last commit" /></a>
+		<a href="https://github.com/RIKTIGATOMTEN/CoreBot/graphs/contributors"><img src="https://img.shields.io/github/contributors/RIKTIGATOMTEN/CoreBot?logo=github&logoColor=white&color=blue&style=flat-square" alt="Contributors" /></a>
+		<a href="https://github.com/RIKTIGATOMTEN/CoreBot/releases"><img src="https://img.shields.io/github/v/release/RIKTIGATOMTEN/CoreBot?style=flat-square" alt="Latest Release" /></a>
+		<a href="https://github.com/RIKTIGATOMTEN/CoreBot/blob/main/LICENSE"><img src="https://img.shields.io/github/license/RIKTIGATOMTEN/CoreBot?style=flat-square" alt="License" /></a>
+	</p>
 </div>
 
 ## 📋 About
 
-**Nexus** is a powerful and extensible Discord bot built on the [@botport/core](https://github.com/BotPortOfficial/core) framework. Designed with both users and developers in mind, this bot offers a seamless experience and relies on addons.
-Addons is the functions for the bot, this is essentially a skeleton, you code your own addons and add them to the bot.
-The bot loads it and executes them at runtime, ensuring a smooth experience for both users and developers.
-
-> ⚠️ **Important Notice**: While this bot is open source, we do not provide support, documentation, or assistance for the underlying [@botport/core](https://github.com/BotPortOfficial/core) framework or custom implementations.
+**CoreBot** is a minimalist Discord bot framework that doesn't include any built-in features. All functionality comes from addons, giving you complete control over what your bot does. No bloat, faster loading times, total customization.
 
 ## 🚀 Features
 
-- ✅ **Developer-friendly architecture** - Easy to understand and modify
-- ✅ **Automatic addon discovery** - Uses the core framework to automatically discover addons in `src/addons/` for valid addons
+- ✅ **Zero built-in features** - Start with a clean slate, add only what you need
+- ✅ **Addon-based architecture** - All functionality comes from modular addons
+- ✅ **Automatic addon discovery** - Automatically discovers addons in `src/addons/`
 - ✅ **Dynamic loading system** - Imports and executes addons at runtime
-- ✅ **Robust error handling** - Failed addons won't crash the bot, instead they will trigger a error with explination
-- ✅ **Extensible framework** - Built on the robust @botport/core framework
-- ✅ **No built in features** - You don't get any made features for the bot, you can either create your own features or download premade addons."
-- ✅ **Debug Mode** - If this feature is enabled in the `.env` file, it will provide detailed logging if you are experiencing any issues or want to debug the bot.
-- ✅ **Open source** - Free to use and modify
-- ✅ **Regular updates** - Maintained and improved continuously
+- ✅ **Robust error handling** - Failed addons won't crash the bot
+- ✅ **TypeScript-first** - Built with TypeScript for type safety
+- ✅ **Developer-friendly** - Easy to understand and extend
 
-## 📦 Installation
-
+## 🛠️ Development Setup
 ```bash
-git clone https://github.com/BotPortOfficial/nexus.git
-cd nexus
+# Clone the repository
+git clone https://github.com/RIKTIGATOMTEN/CoreBot.git
+cd CoreBot
+
+# Install dependencies
 npm install
+
+# Copy environment template
+copy src\config\.env.example src\config\.env
+
+# Edit .env with your bot token
+# Then run in dev mode
+npm run dev
 ```
 
-## ⚙️ Setup
+## 📝 Configuration
 
-1. Clone the repository
-2. Open powershell or desired software and navigate to the cloned repository
-3. Run `npm install` to install the required dependencies
-4. Install dependencies with `npm install`
-5. Configure your bot token and environment variables in the `.env` file located in the `config` directory
-6. Run the bot with the included `start.bat` or with your own desired startup configuration
+Edit `src/config/.env`:
+```env
+DISCORD_TOKEN=your_bot_token_here
+CLIENT_ID=your_client_id_here
+DEBUG=false
+```
+
+## 🔌 Creating Addons
+
+Place addons in `src/addons/YourAddon/`:
+```
+src/addons/YourAddon/
+├── addon.info           # Addon metadata
+├── script/
+│   └── main.ts         # Entry point
+└── config/             # Optional configs
+```
+
+## 📦 Building
+```bash
+# Build for production
+npm run build
+
+# Output will be in dist/
+```
+
+## 🚀 Scripts
+
+- `npm run dev` - Development mode with hot reload
+- `npm run build` - Build for production
+- `npm start` - Run production build
 
 ## 📄 License
 
-This project is licensed under the [MIT license](https://github.com/BotPortOfficial/nexus/blob/main/LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
 <div align="center">
-	<sub>Built with ❤️ by the BotPort Team</sub>
+	<sub>Built with ❤️ by RIKTIGATOMTEN</sub>
 </div>
-=======
-# CoreBot
-A lightweight, modular Discord bot framework with zero built-in features.  Add only the functionality you need through addons—no bloat, faster loading times.
->>>>>>> e3c077db07924b0bccbdbc07aac4ee43b6aeb30a
