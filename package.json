@@ -1,0 +1,47 @@
+{
+  "name": "xfield",
+  "version": "1.1.38",
+  "main": "dist/main.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && node copy-non-ts.js && prettier --write dist/**/*.js",
+    "format": "prettier --write src/**/*.ts",
+    "start": "tsx src/index.ts",
+    "start-build": "node dist/index.js",
+    "build2": "node clear-dist.js && node copy-structure.js && tsup ",
+    "dev": "tsx src/index.ts"
+  },
+  "imports": {
+    "#core": "./src/core/export/main.js"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.17.0",
+    "@types/pg": "^8.15.6",
+    "cpx2": "^8.0.0",
+    "prettier": "^3.5.3",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.8.3"
+  },
+  "private": true,
+  "keywords": [],
+  "author": "RiktigaTomten",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "better-sqlite3": "^12.4.1",
+    "chalk": "^5.4.1",
+    "discord.js": "^14.19.3",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "fs": "^0.0.1-security",
+    "inquirer": "^9.3.7",
+    "latest-version": "^9.0.0",
+    "mariadb": "^3.4.5",
+    "mysql2": "^3.14.1",
+    "path": "^0.12.7",
+    "pg": "^8.16.3",
+    "yaml": "^2.6.1"
+  }
+}

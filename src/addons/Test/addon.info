@@ -1,0 +1,4 @@
+author: RiktigaTomten
+mainfile: ./main.js
+type: addon
+priority: 1

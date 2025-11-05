@@ -1,0 +1,6 @@
+author: RiktigaTomten
+mainfile: ./script/main.ts
+eventfile: ./events/tickethandler.js
+mainconfig: ./config/ticketoptions.json
+type: addon
+priority: 10
