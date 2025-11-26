@@ -1,49 +1,66 @@
-import chalk from "chalk"; // Import chalk for colored console output
-import dotenv from "dotenv"; // Import dotenv to manage environment variables
-import { ENV_PATH } from "./paths.js"; // Import the path to the .env file
-// Load environment variables from .env file
-dotenv.config({ path: ENV_PATH });
-// Determine if debug mode is enabled
-const isDebug: boolean = process.env.DEBUG === "true";
-// Function to get current timestamp in HH:MM:SS format
-const getTimestamp = (): string => new Date().toLocaleTimeString();
-// Logger interface definition
+/**
+ * CONSOLE LOGGER
+ * ==============
+ * Color-coded logging with timestamps for the bot.
+ * 
+ * WHY THIS EXISTS:
+ * - Consistent log formatting across the bot
+ * - Color-coded by severity for easy reading
+ * - Timestamps for tracking when events occurred
+ * - Debug mode can be enabled/disabled via .env
+ * 
+ * LOG LEVELS:
+ * - info: General information (white)
+ * - warn: Warnings (yellow)
+ * - error: Errors (red)
+ * - debug: Debug info (cyan) - only if DEBUG=true
+ * - success: Success messages (green)
+ * - log: Plain log (white)
+ * 
+ * USAGE:
+ * import { logger } from '#core';
+ * 
+ * logger.info('Bot started');
+ * logger.error('Something went wrong:', error);
+ * logger.debug('Detailed info'); // Only shows if DEBUG=true
+ */
+
+import chalk from 'chalk';
+import {locale} from './locale.js';
+
+const isDebugEnabled = (): boolean => process.env.DEBUG === 'true';
+
 export interface Logger {
-  info: (msg: string, ...args: any[]) => void; // Log for informational messages
-  warn: (msg: string, ...args: any[]) => void; // Log for warning messages
-  error: (msg: string, ...args: any[]) => void; // Log for error messages
-  debug: (msg: string, ...args: any[]) => void; // Log for debug messages
-  success: (msg: string, ...args: any[]) => void; // Log for successful operations
-  log: (msg: string, ...args: any[]) => void; // General log method
+  info: (msg: string, ...args: any[]) => void;
+  warn: (msg: string, ...args: any[]) => void;
+  error: (msg: string, ...args: any[]) => void;
+  debug: (msg: string, ...args: any[]) => void;
+  success: (msg: string, ...args: any[]) => void;
+  log: (msg: string, ...args: any[]) => void;
 }
 
 const clogger: Logger = {
-  // Log with [info] prefix
   info: (msg: string, ...args: any[]): void => {
-    console.log(chalk.white(`${getTimestamp()}:[info] ${msg}`), ...args);
+    console.log(chalk.white(`${locale.getTimestamp()}:[info] ${msg}`), ...args);
   },
-  // Log with [warn] prefix
   warn: (msg: string, ...args: any[]): void => {
-    console.warn(chalk.yellow(`${getTimestamp()}:[warn] ${msg}`), ...args);
+    console.warn(chalk.yellow(`${locale.getTimestamp()}:[warn] ${msg}`), ...args);
   },
-  // Log with [error] prefix
   error: (msg: string, ...args: any[]): void => {
-    console.error(chalk.red(`${getTimestamp()}:[error] ${msg}`), ...args);
+    console.error(chalk.red(`${locale.getTimestamp()}:[error] ${msg}`), ...args);
   },
-  // Log with [debug] prefix
   debug: (msg: string, ...args: any[]): void => {
-    if (isDebug) {
-      console.log(chalk.cyan(`${getTimestamp()}:[debug] ${msg}`), ...args);
+    if (isDebugEnabled()) {
+      console.log(chalk.cyan(`${locale.getTimestamp()}:[debug] ${msg}`), ...args);
     }
   },
-  // Log with [success] prefix
   success: (msg: string, ...args: any[]): void => {
-    console.log(chalk.green(`${getTimestamp()}:[success] ${msg}`), ...args);
+    console.log(chalk.green(`${locale.getTimestamp()}:[success] ${msg}`), ...args);
   },
-  // Log with [log] prefix
   log: (msg: string, ...args: any[]): void => {
-    console.log(chalk.white(`${getTimestamp()}:[log] ${msg}`), ...args);
+    console.log(chalk.white(`${locale.getTimestamp()}:[log] ${msg}`), ...args);
   },
 };
-//Export the logger as default for export usage
+
+export {clogger as logger};
 export default clogger;

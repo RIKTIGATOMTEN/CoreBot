@@ -1,3 +1,12 @@
+/**
+ * DATABASE EXPORTS
+ * ================
+ * Re-exports database functionality for the #core import alias.
+ * 
+ * This file exists to provide a clean import path:
+ * import { db, initDatabases } from '#core';
+ */
+
 export { 
   db, 
   initDatabases, 

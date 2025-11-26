@@ -12,9 +12,9 @@
     "outDir": "dist",
     "rootDir": "src",
     "removeComments": true,
-    "types": ["node", "discord.js"]
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "types": ["node"]
   },
-  "include": ["src"],
-  "declaration": true,
-  "emitDeclarationOnly": false
+  "include": ["src"]
 }

@@ -4,91 +4,54 @@
 		<h1>🤖 CoreBot</h1>
 	</p>
 	<p>
-		<em>A lightweight, modular Discord bot framework with zero built-in features</em>
+		<em>A powerful, addon-driven Discord bot framework</em>
 	</p>
 	<br />
-<p>
-  <a href="https://github.com/RIKTIGATOMTEN/CoreBot">
-    <img src="https://img.shields.io/github/last-commit/RIKTIGATOMTEN/CoreBot?logo=github&logoColor=white&style=flat-square" alt="Last commit" />
-  </a>
-  <a href="https://github.com/RIKTIGATOMTEN/CoreBot/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/RIKTIGATOMTEN/CoreBot?logo=github&logoColor=white&color=blue&style=flat-square" alt="Contributors" />
-  </a>
-  <a href="https://github.com/RIKTIGATOMTEN/CoreBot/releases">
-    <img src="https://img.shields.io/github/v/release/RIKTIGATOMTEN/CoreBot?style=flat-square" alt="Latest Release" />
-  </a>
-  <a href="https://github.com/RIKTIGATOMTEN/CoreBot/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/RIKTIGATOMTEN/CoreBot?style=flat-square" alt="License" />
-  </a>
-</p>
 
-[![Wiki](https://img.shields.io/badge/wiki-documentation-blue?style=flat-square)](https://github.com/RIKTIGATOMTEN/CoreBot/wiki)
+[![Documentation](https://img.shields.io/badge/📚_Documentation-Visit_Docs-blue?style=for-the-badge)](https://riktigatomten.github.io/CoreBot-Docs/)
+
 </div>
 
-## 📋 About
+---
 
-**CoreBot** is a minimalist Discord bot framework that doesn't include any built-in features. All functionality comes from addons, giving you complete control over what your bot does. No bloat, faster loading times, total customization.
+## About
 
-## 🚀 Features
+**CoreBot** is a modular Discord bot framework where the core handles infrastructure and addons provide features. Import `#core` in any addon to access utilities, database, logging, and more.
 
-- ✅ **Zero built-in features** - Start with a clean slate, add only what you need
-- ✅ **Addon-based architecture** - All functionality comes from modular addons
-- ✅ **Automatic addon discovery** - Automatically discovers addons in `src/addons/`
-- ✅ **Dynamic loading system** - Imports and executes addons at runtime
-- ✅ **Robust error handling** - Failed addons won't crash the bot
-- ✅ **TypeScript-first** - Built with TypeScript for type safety
-- ✅ **Developer-friendly** - Easy to understand and extend
+## ✨ Features
 
-## 🛠️ Development Setup
-```bash
-# Clone the repository
-git clone https://github.com/RIKTIGATOMTEN/CoreBot.git
-cd CoreBot
+- **Modular** - Add only the features you need
+- **Shared Core** - All addons access common utilities via `#core`
+- **Self-contained Addons** - Each addon has its own config, database, and events
+- **Extension Support** - Addons can have sub-addons
+- **Easy to Extend** - Build and share addons without touching core code
 
-# Install dependencies
-npm install
+## 🚀 Quick Start
 
-# Copy environment template
-copy src\config\.env.example src\config\.env
+1. Clone the repository
+2. Run `npm install`
+3. Copy `src/config/.env.example` to `src/config/.env`
+4. Add your bot token and client ID to `.env`
+5. Run `npm run dev`
 
-# Edit .env with your bot token
-# Then run in dev mode
-npm run dev
-```
+## 📚 Documentation
 
-## 📝 Configuration
+Full documentation is available at:
 
-Edit `src/config/.env`:
-```env
-DISCORD_TOKEN=your_bot_token_here
-CLIENT_ID=your_client_id_here
-DEBUG=false
-```
+**👉 [https://riktigatomten.github.io/CoreBot-Docs/](https://riktigatomten.github.io/CoreBot-Docs/)**
 
-## 🔌 Creating Addons
+The documentation covers:
+- Getting Started
+- Creating Addons
+- Core API Reference
+- Database Integration
+- Event Handling
+- Extensions
+- And more...
 
-Place addons in `src/addons/YourAddon/`:
-```
-src/addons/YourAddon/
-├── addon.info           # Addon metadata
-├── script/
-│   └── main.ts         # Entry point
-└── config/             # Optional configs
-```
+## 🤝 Contributing
 
-## 📦 Building
-```bash
-# Build for production
-npm run build
-
-# Output will be in dist/
-```
-
-## 🚀 Scripts
-
-- `npm run dev` - Development mode with hot reload
-- `npm run build` - Build for production
-- `npm start` - Run production build
+Contributions are welcome! Whether it's core improvements, new addons, documentation, or bug fixes.
 
 ## 📄 License
 
@@ -97,5 +60,5 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 <div align="center">
-	<sub>Built with ❤️ by RIKTIGATOMTEN</sub>
+	<sub>Built with ❤️ by RiktigaTomten</sub>
 </div>

@@ -1,0 +1,48 @@
+# database.yaml
+# ======================
+# Database configuration for SQLite
+# This file configures your SQLite database location and behavior
+
+database:
+  # Path to your SQLite database folder
+  # Can be absolute or relative to project root
+  # Examples: ./database/, /var/data/myapp/, ../storage/
+  path: ./database/
+  
+  # Name of the SQLite database file
+  # Must end with .db extension
+  name: bot.db
+  
+  # Journal mode controls how SQLite handles transactions
+  # Options: delete, truncate, persist, memory, wal, off
+  # - wal (Write-Ahead Logging): Best for concurrent reads/writes (recommended)
+  # - delete: Traditional rollback journal (default SQLite behavior)
+  # - memory: Keeps journal in memory (faster but less safe)
+  journal_mode: wal
+  
+  # Synchronous mode controls disk sync behavior
+  # Options: off, normal, full, extra (or 0, 1, 2, 3)
+  # - off: Fastest, but risk of corruption on power loss
+  # - normal: Good balance of safety and speed (recommended)
+  # - full: Very safe, slower writes
+  # - extra: Paranoid mode, slowest
+  synchronous: normal
+  
+  # Enable debug logging for all database queries
+  # WARNING: Very verbose! Only use during development
+  debug: false
+  
+  # Enable foreign key constraints
+  # Set to false if you need to disable FK checks temporarily
+  foreign_keys: true
+  
+  # Cache size in pages (negative = KB, positive = pages)
+  # -2000 = 2MB cache (recommended for small to medium apps)
+  # -64000 = 64MB cache (for larger databases)
+  cache_size: -2000
+  
+  # Where to store temporary tables and indices
+  # Options: default, file, memory (or 0, 1, 2)
+  # - memory: Faster temporary operations (recommended)
+  # - file: Uses disk for temp storage
+  temp_store: memory

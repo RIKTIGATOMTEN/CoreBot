@@ -1,3 +1,18 @@
+/**
+ * STARTUP BANNER
+ * ==============
+ * Displays ASCII art banner when bot successfully starts.
+ * 
+ * WHY THIS EXISTS:
+ * - Visual confirmation that bot initialized correctly
+ * - Branding and personality for the bot
+ * - Shows GitHub link for the project
+ * 
+ * WHEN IT RUNS:
+ * - Called after all addons are loaded
+ * - Only shown on successful startup
+ */
+
 import chalk from "chalk";
 
 const logBanner = async (): Promise<void> => {

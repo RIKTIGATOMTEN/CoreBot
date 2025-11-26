@@ -1,5 +1,35 @@
+/**
+ * ERROR HANDLER
+ * =============
+ * User-friendly error messages and global error handling.
+ * 
+ * WHY THIS EXISTS:
+ * - Raw errors are cryptic for users
+ * - Maps error codes to human-readable explanations
+ * - Provides solutions for common problems
+ * - Catches unhandled errors globally
+ * 
+ * HOW IT WORKS:
+ * - Maps error codes to ErrorInfo (title, description, solution)
+ * - Formats errors with color coding by severity
+ * - registerGlobalHandlers() catches uncaught errors
+ * 
+ * ERROR CATEGORIES:
+ * - Database: ECONNREFUSED, ER_ACCESS_DENIED, ER_BAD_DB_ERROR
+ * - Network: ENOTFOUND, ETIMEDOUT
+ * - Discord: API errors, permission errors
+ * 
+ * USAGE:
+ * import { ErrorHandler } from '#core';
+ * 
+ * try {
+ *   await riskyOperation();
+ * } catch (error) {
+ *   ErrorHandler.handleError(error, 'MyAddon', logger);
+ * }
+ */
+
 import chalk from 'chalk';
-import logger from '../../utils/logger.js';
 
 type Severity = 'critical' | 'high' | 'medium' | 'low';
 
@@ -165,12 +195,12 @@ export class ErrorHandler {
 
     console.error('');
     console.error(severityChalk(`🚨 ${explanation.title}${contextStr} ${timestamp}`));
-    console.error(chalk.gray(`📝 ${explanation.description}`));
-    console.error(chalk.blue(`💡 ${explanation.solution}`));
+    console.error(chalk.gray(`${explanation.description}`));
+    console.error(chalk.blue(`${explanation.solution}`));
     console.error(chalk.white(`⚠️  Severity: ${severityChalk(explanation.severity.toUpperCase())}`));
 
     if (process.env.DEBUG === 'true' || explanation.severity === 'critical') {
-      console.error(chalk.dim('🔧 Technical Details:'));
+      console.error(chalk.dim('Technical Details:'));
       console.error(chalk.dim(`   Error Code: ${err.code || 'N/A'}`));
       console.error(chalk.dim(`   Error Message: ${err.message || 'N/A'}`));
       
@@ -212,22 +242,27 @@ export class ErrorHandler {
   /**
    * Register global error handlers
    */
-  static registerGlobalHandlers(): void {
+  static registerGlobalHandlers(log?: Logger): void {
+    const l = log;
+    if (!l) {
+      throw new Error('registerGlobalHandlers(logger) must be called with a logger instance to avoid circular imports');
+    }
+
     process.on('unhandledRejection', (reason: any, promise: Promise<any>) => {
-      logger.error('Unhandled Promise Rejection:');
-      logger.error('Reason:', reason);
-      logger.debug('Promise:', promise);
+      l.error('Unhandled Promise Rejection:');
+      l.error('Reason:', reason);
+      l.debug('Promise:', promise);
     });
 
     process.on('uncaughtException', (error: Error) => {
-      logger.error('Uncaught Exception:');
-      logger.error(error.message);
+      l.error('Uncaught Exception:');
+      l.error(error.message);
       if (error.stack) {
-        logger.debug(error.stack);
+        l.debug(error.stack);
       }
       process.exit(1); // Exit on uncaught exceptions
     });
 
-    logger.debug('Global error handlers registered');
+    l.debug('Global error handlers registered');
   }
 }

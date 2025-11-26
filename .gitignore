@@ -9,7 +9,9 @@ yarn-error.log*
 .pnp.js
 .idea
 .node_modules
-github-release.js
+./
 dist
+database
 .vscode/*
 src/config/.env
+push.sh
