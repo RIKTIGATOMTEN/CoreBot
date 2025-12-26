@@ -8,7 +8,7 @@
 	</p>
 	<br />
 
-[![Documentation](https://img.shields.io/badge/📚_Documentation-Visit_Docs-blue?style=for-the-badge)](https://riktigatomten.github.io/CoreBot-Docs/)
+[![Documentation](https://img.shields.io/badge/📚_Documentation-Visit_Docs-blue?style=for-the-badge)](https://riktigatomten.github.io/corebot-docs/)
 
 </div>
 
@@ -38,7 +38,7 @@
 
 Full documentation is available at:
 
-**👉 [https://riktigatomten.github.io/CoreBot-Docs/](https://riktigatomten.github.io/CoreBot-Docs/)**
+**👉 [https://riktigatomten.github.io/CoreBot-Docs/](https://riktigatomten.github.io/corebot-docs/)**
 
 The documentation covers:
 - Getting Started
@@ -61,4 +61,5 @@ This project is licensed under the [MIT License](LICENSE).
 
 <div align="center">
 	<sub>Built with ❤️ by RiktigaTomten</sub>
+
 </div>
